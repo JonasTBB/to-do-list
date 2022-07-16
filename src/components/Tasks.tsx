@@ -33,7 +33,7 @@ export function Tasks({ id, content, onDeleteTask }: TasksProps) {
         onClick={handleOnCompletedTask}
       />
 
-      <span className={isCompleted === true ? 'completed' : ''}>{content}</span>
+      <span className={isCompleted === true ? styles.completed : ''}>{content}</span>
       <button
         onClick={handleDeleteTask}
         type="button"

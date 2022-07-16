@@ -70,11 +70,17 @@ export function TaskBorder() {
       </header>
 
       <main className={styles.mainBox}>
-        <ClipboardText size={56} weight="thin" />
-        <span>Você ainda não tem tarefas cadastradas
-          <br />
-          Crie tarefas e organize seus itens a fazer
-        </span>
+        {tasks.length === 0 ?
+          <>
+            <ClipboardText size={56} weight="thin" />
+            <span>Você ainda não tem tarefas cadastradas
+              <br />
+              Crie tarefas e organize seus itens a fazer
+            </span>
+          </>
+          :
+          ''
+        }
         {tasks.map(task => {
           return (
             <Tasks
