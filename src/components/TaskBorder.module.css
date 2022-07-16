@@ -1,0 +1,89 @@
+.taskForm {
+  margin: -1.5rem 1rem 0rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.taskForm textarea {
+  width: 638px;
+  height: 54px;
+  background: var(--gray-500);
+  border: 0;
+  resize: none;
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--gray-300);
+  line-height: 1;
+}
+
+.taskForm button[type=submit] {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 0;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: background-color 0.1s;
+}
+
+.taskForm button[type=submit]:hover {
+  background: var(--blue);
+}
+
+.taskForm button[type=submit] svg {
+  margin-left: 8px
+}
+
+.headerBox{
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem 1rem;
+  border-bottom: 0.5px solid;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.headerBox span{
+  height: 1.5rem;
+  width: 2rem;
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.createdTasks {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.createdTasks p{
+  color: var(--blue);
+  margin-right: 0.5rem;
+}
+
+.completedTasks {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.completedTasks p{
+  color: var(--purple);
+  margin-right: 0.5rem;
+}
+
+.mainBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

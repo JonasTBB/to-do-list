@@ -1,0 +1,49 @@
+.taskBox{
+  min-height: 72px;
+  width: 90%;
+  background: var(--gray-500);
+  color: var(--gray-100);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px;
+  gap: 12px;
+  margin: 1rem;
+}
+
+
+.taskBox input{
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid;
+  border-color: var(--blue);
+  border-radius: 50%;
+}
+
+.taskBox input:checked{
+  cursor: pointer;
+  background-color: var(--purple);
+  border-color: var(--purple);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.completed{
+  text-decoration:line-through;
+}
+
+.taskBox button{
+  border: 0;
+  background: transparent;
+  color: var(--gray-300);
+  cursor: pointer;
+
+  transition: color 0.1s;
+}
+
+.taskBox button:hover {
+  color: var(--gray-100);
+}
