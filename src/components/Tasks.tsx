@@ -4,24 +4,16 @@ import { useState } from 'react';
 import styles from './Tasks.module.css'
 
 interface TasksProps {
-  id: string;
   content: string;
+  isComplete: boolean;
   onDeleteTask: (task: string) => void;
+  completeTask: () => void;
 }
 
-export function Tasks({ id, content, onDeleteTask }: TasksProps) {
-  const [isCompleted, setIsCompleted] = useState(false)
+export function Tasks({ content, isComplete, onDeleteTask, completeTask }: TasksProps) {
 
   function handleDeleteTask() {
-    onDeleteTask(id)
-  }
-
-  function handleOnCompletedTask() {
-    if (isCompleted) {
-      setIsCompleted(false);
-    } else {
-      setIsCompleted(true);
-    }
+    onDeleteTask(content)
   }
 
   return (
@@ -29,11 +21,11 @@ export function Tasks({ id, content, onDeleteTask }: TasksProps) {
       <input
         type="checkbox"
         readOnly
-        checked={isCompleted}
-        onClick={handleOnCompletedTask}
+        checked={isComplete}
+        onClick={completeTask}
       />
 
-      <span className={isCompleted === true ? styles.completed : ''}>{content}</span>
+      <span className={isComplete === true ? styles.completed : ''}>{content}</span>
       <button
         onClick={handleDeleteTask}
         type="button"

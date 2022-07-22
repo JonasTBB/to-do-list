@@ -4,12 +4,30 @@ import { Tasks } from './Tasks'
 
 import styles from './TaskBorder.module.css'
 
+interface TasksProps {
+  content: string;
+  isComplete: boolean;
+}
+
 export function TaskBorder() {
-  const [tasks, setTasks] = useState([
-    'Nova tarefa'
+  const [tasks, setTasks] = useState<TasksProps[]>([
+    {
+      content: 'Nova Tarefa',
+      isComplete: true,
+    }
   ])
 
   const [newTask, setNewTask] = useState('')
+
+  const [isCompleted, setIsCompleted] = useState(false)
+
+  function handleOnCompletedTask() {
+    if (isCompleted) {
+      setIsCompleted(false);
+    } else {
+      setIsCompleted(true);
+    }
+  }
 
 
   function handleCreateNewTak(event: FormEvent) {
@@ -30,7 +48,7 @@ export function TaskBorder() {
 
   function deleteTask(taskToDelete: string) {
     const tasksWithoutDeletedOne = tasks.filter(task => {
-      return task !== taskToDelete
+      return task.content !== taskToDelete
     })
 
     setTasks(tasksWithoutDeletedOne)
@@ -84,9 +102,10 @@ export function TaskBorder() {
         {tasks.map(task => {
           return (
             <Tasks
-              id={task}
-              content={task}
+              content={task.content}
+              isComplete={isCompleted}
               onDeleteTask={deleteTask}
+              completeTask={handleOnCompletedTask}
             />
           )
         })}
