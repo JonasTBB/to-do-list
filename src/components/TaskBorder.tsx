@@ -33,7 +33,12 @@ export function TaskBorder() {
   function handleCreateNewTak(event: FormEvent) {
     event.preventDefault()
 
-    setTasks([...tasks, newTask])
+    const NewTask: TasksProps = {
+      content: newTask,
+      isComplete: isCompleted,
+    }
+
+    setTasks([...tasks, NewTask])
     setNewTask('')
   }
 
